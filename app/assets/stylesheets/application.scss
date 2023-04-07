@@ -30,11 +30,12 @@
 .weather-nav .nav-item.active a {
   color: #0d6efd;
 }
-.weather-nav .signoutBTN,  .signinBTN  {
+.weather-nav .signoutBTN,  .signinBTN, .delete-btn  {
   width: 100px;
   text-align: center;
   color: #fff !important;
   border-radius: 20px;
+  border: 0px !important;
 }
 .auth-main .box .signinBTN  {
   width: 100% !important;

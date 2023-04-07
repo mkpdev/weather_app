@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get "/current_air_pollution", to: "weathers#current_air_pollution"
   get "/geocoding", to: "weathers#geocoding"
 
+  resources :weather_reports
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 end

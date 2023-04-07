@@ -1,0 +1,38 @@
+<%= link_to 'Add Weather Report', new_weather_report_path, method: :get, class: 'nav-link' %>   
+<section class="float-left w-100 mt-5 Get-Weather">
+  <div class="container">
+    <div class="row">
+      <h1 class="text-primary w-100 page-title mb-4">Weather Reports</h1>
+      <div class="card m-12">
+        <div class="card-body">
+          <div class="row">
+              <p>
+                <table class="table mt-3 table-bordered Air-Pollution">
+                  <thead>
+                    <tr>
+                        <th scope="col"> City</th>
+                        <th scope="col"> Temperature</th>
+                        <th scope="col">Humidity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @weather_reports.each do |report| %>
+                      <tr>
+                        <td> <%=report.city %> </td>
+                        <td> <%=report.temperature %> K </td>
+                        <td> <%=report.humidity %> </td>
+                        <td><%= link_to 'show', weather_report_path(report.id), method: :get  %>
+                        </td>
+                        <td><%= button_to 'Delete', weather_report_path(report), method: :delete, class: 'btn-primary delete-btn' %>
+                        </td>
+                      </tr>
+                    <%end%>
+                  </tbody>
+                </table>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

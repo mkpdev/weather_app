@@ -1,12 +1,5 @@
 class WeathersController < ApplicationController
 
-  def current_weather
-    current_weather = OpenWeatherMapService.current_weather(params[:city])
-    if current_weather.code == 200
-      @weather = weather_response(current_weather)
-    end
-  end
-
   def current_air_pollution
     air_pollution = OpenWeatherMapService.current_air_pollution(params[:lat],params[:lon])
     if air_pollution.code == 200
@@ -22,14 +15,6 @@ class WeathersController < ApplicationController
   end
 
   private
-
-  def weather_response(response)
-    {
-      temperature: response['main']['temp'],
-      description: response['weather'][0]['description'],
-      humidity: response['main']['humidity'],
-    }
-  end
 
   def air_response(response)
     {

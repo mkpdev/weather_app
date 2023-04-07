@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <h1 class="text-primary w-100 page-title mb-4">Current Weather</h1>
-      <%= form_with url: "/current_weather", method: :get do |f| %>
+      <%= form_with url: "/weather_reports", method: :post do |f| %>
         <div class="card mb-4">
           <div class="card-body">
             <div class="mb-3 row" style="align-items: end;">
@@ -17,19 +17,9 @@
           </div>
         </div>
       <% end %>
-
       <div class="card m-12">
         <div class="card-body">
           <div class="row">
-            <% if @weather.present? %>
-              <% @weather.keys.each do |key| %>
-                <p>
-                  <%=key.capitalize%>: <%= @weather[key] %><%="K" if key == "temperature".to_sym %>
-                </p>
-              <%end%>
-            <% else %>
-              <p class="text-center mt-2">No data available.</p>
-            <% end %>
           </div>
         </div>
       </div>
