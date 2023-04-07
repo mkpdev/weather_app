@@ -9,7 +9,7 @@ class WeathersController < ApplicationController
 
   def geocoding
     geocoding = OpenWeatherMapService.geocoding(params[:city])
-    if geocoding.code == 200
+    if geocoding.code == 200 && !(geocoding.empty?)
       @geocode = geocoding_response(geocoding)
     end
   end

@@ -5,8 +5,7 @@ class WeatherReportsController < ApplicationController
 
   def create
     weather = get_current_weather
-    weather[:city] = params[:city]
-
+    weather[:city] = params[:city] if weather.present?
     @weather_report = current_user.weather_reports.new(weather)
     if @weather_report.save
       redirect_to @weather_report

@@ -24,3 +24,7 @@ Information regarding this project:
 
 6) To access rails c, following command can used - 
   ```docker-compose run web rails  c```
+
+### Third party public API used - 
+
+Weather API - https://openweathermap.org/api
