@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Information regarding this project:
 
-Things you may want to cover:
-
-* Ruby version
+* Using Ruby version
+  ruby 3.0.0
 
 * System dependencies
+  Install docker - Docker version 23.0.3
 
-* Configuration
+## Local development flow
 
-* Database creation
+1) Clone the repository.
 
-* Database initialization
+2) Go to project directory.
 
-* How to run the test suite
+3) Run docker command to setup - 
+  ```docker-compose build```
 
-* Services (job queues, cache servers, search engines, etc.)
+4) To run server - 
+   ```docker-compose up```
 
-* Deployment instructions
+5) Finally go to `http://localhost:3000`
 
-* ...
+6) To access rails c, following command can used - 
+  ```docker-compose run web rails  c```
