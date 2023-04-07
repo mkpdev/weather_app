@@ -1,0 +1,38 @@
+<section class="float-left w-100 mt-5 Get-Weather">
+<div class="container">
+<div class="row">
+<h1 class="text-primary w-100 page-title mb-4">Geocode</h1>
+
+<%= form_with url: "/geocoding", method: :get do |f| %>
+  <div class="card mb-4">
+    <div class="card-body">
+     <div class="mb-3 row" style="align-items: end;">
+        <div class="col-sm-4">
+          <%= f.label :city, { class: "form-label"} %>
+          <%= f.text_field :city, { class: "form-control", placeholder: "city" } %>
+        </div>
+            <div class="col-sm-4">
+
+      <%= f.submit "Get Geocode", class: "btn btn-primary GetWeatherBTN" %>
+            </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+ <div class="card m-12">
+    <div class="card-body">
+      <div class="row">
+<% if @geocode.present? %>
+  <% @geocode.keys.each do |key| %>
+    <p> <%=key.capitalize%>: <%= @geocode[key] %> </p>
+  <%end%>
+<% else %>
+  <p class="text-center mt-2">No data available.</p>
+<% end %>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

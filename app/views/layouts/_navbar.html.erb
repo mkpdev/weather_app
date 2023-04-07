@@ -1,0 +1,46 @@
+<nav class="weather-nav navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+  <a class="navbar-brand text-primary" href="#">WeatherApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav m-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      
+      <li class="nav-item">
+            <%= link_to 'Current weather', current_weather_path, method: :get, class: 'nav-link' %>   
+      </li>
+      <li class="nav-item">
+            <%= link_to 'current air pollution', current_air_pollution_path, method: :get, class: 'nav-link' %>   
+      </li>
+      <li class="nav-item">
+            <%= link_to 'geocoding', geocoding_path, method: :get, class: 'nav-link' %>   
+      </li>
+
+    </ul>
+    <span class="navbar-text justify-centent-end">
+      <ul class="navbar-nav">
+  <% if user_signed_in? %>
+    <li class="nav-item nav-link ">
+       <%=" #{current_user.email}"%>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link signoutBTN  btn-primary' %> 
+    </li>
+  <% else %>
+    <li class="nav-item">
+      <%= link_to 'Log In', new_user_session_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item ">
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link  btn-primary' %>
+    </li>
+  <% end %>
+</ul>
+    </span>
+  </div>
+  </div>
+</nav>
+

@@ -10,6 +10,12 @@ module WeatherApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    Bundler.require(*Rails.groups)
+    if ['development', 'test'].include? ENV['RAILS_ENV']
+      Dotenv::Railtie.load
+    end
+    
+    HOSTNAME = ENV['HOSTNAME']
 
     # Configuration for the application, engines, and railties goes here.
     #
